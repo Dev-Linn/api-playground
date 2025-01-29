@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>API Playground</h1>
+
+    <div class="card">
+        <h2>Listar Todos os Autores</h2>
+        <button id="fetch-authors-btn" class="btn">Carregar Autores</button>
+        <div class="pagination-controls">
+            <button id="prev-page" class="btn pagination-btn" disabled>← Anterior</button>
+            <span id="page-info">Página 1</span>
+            <button id="next-page" class="btn pagination-btn" disabled>Próxima →</button>
+        </div>
+        <ul id="authors-list" class="list"></ul>
+    </div>
+
+    <!-- Filtrar autores -->
+    <div class="card">
+        <h2>Filtrar Autores por Nome</h2>
+        <input type="text" id="filter-name" placeholder="Nome do autor" class="input">
+        <button id="filter-authors-btn" class="btn">Filtrar</button>
+        <ul id="filtered-authors-list" class="list"></ul>
+    </div>
+
+    <!-- Adicionar novo autor -->
+    <div class="card">
+        <h2>Adicionar Novo Autor</h2>
+        <textarea id="author-data" rows="10" class="textarea">
+        {
+            "nome": "Linn", 
+            "dataNascimento": "2005-01-01", 
+            "nacionalidade": "brasileiro"
+        }
+        </textarea>
+        <button id="add-author-btn" class="btn">Adicionar Autor</button>
+        <pre id="add-author-response" class="response"></pre>
+    </div>
+
+    <!-- Deletar Autor -->
+    <div class="card">
+        <h2>Deletar Autor por ID</h2>
+        <input type="text" id="delete-author-id" placeholder="ID do autor" class="input">
+        <button id="delete-author-btn" class="btn">Deletar</button>
+        <pre id="delete-author-response" class="response"></pre>
+    </div>
+
+    <!-- Atualizar Autor -->
+    <div class="card">
+        <h2>Atualizar Autor por ID</h2>
+        <input type="text" id="update-author-id" placeholder="ID do autor" class="input">
+        <textarea id="update-author-data" rows="10" class="textarea">
+        {
+            "nome": "Linn", 
+            "dataNascimento": "2005-01-01", 
+            "nacionalidade": "brasileiro"
+        }
+        </textarea>
+        <button id="update-author-btn" class="btn">Atualizar Autor</button>
+        <pre id="update-author-response" class="response"></pre>
+    </div>
+
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

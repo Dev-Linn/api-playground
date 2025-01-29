@@ -5,7 +5,7 @@ const itemsPerPage = 5;
 
 // Função principal para carregar autores
 document.getElementById('fetch-authors-btn').addEventListener('click', () => {
-    fetch('https://libraryapi-12.onrender.com/autores/all')
+    fetch('https://libraryapi-production-7976.up.railway.app/autores/all')
         .then(response => response.json())
         .then(data => {
             allAuthors = data;
@@ -71,7 +71,7 @@ document.getElementById('next-page').addEventListener('click', () => {
 // Função para filtrar autores por nome
 document.getElementById('filter-authors-btn').addEventListener('click', () => {
     const name = document.getElementById('filter-name').value;
-    fetch(`https://libraryapi-12.onrender.com/autores?nome=${name}`)
+    fetch(`https://libraryapi-production-7976.up.railway.app/autores?nome=${name}`)
         .then(response => response.json())
         .then(data => {
             const filteredList = document.getElementById('filtered-authors-list');
@@ -111,7 +111,7 @@ document.getElementById('add-author-btn').addEventListener('click', () => {
         return;
     }
 
-    fetch('https://libraryapi-12.onrender.com/autores', {
+    fetch('https://libraryapi-production-7976.up.railway.app/autores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authorData)
@@ -135,7 +135,7 @@ document.getElementById('add-author-btn').addEventListener('click', () => {
 // Função para deletar autor
 document.getElementById('delete-author-btn').addEventListener('click', () => {
     const authorId = document.getElementById('delete-author-id').value;
-    fetch(`https://libraryapi-12.onrender.com/autores/${authorId}`, {
+    fetch(`https://libraryapi-production-7976.up.railway.app/autores/${authorId}`, {
         method: 'DELETE'
     })
     .then(response => {
@@ -170,7 +170,7 @@ document.getElementById('update-author-btn').addEventListener('click', () => {
     // Atualizando a data de atualização
     authorData.dataAtualizacao = new Date().toISOString();
 
-    fetch(`https://libraryapi-12.onrender.com/autores/${authorId}`, {
+    fetch(`https://libraryapi-production-7976.up.railway.app/autores/${authorId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authorData)
